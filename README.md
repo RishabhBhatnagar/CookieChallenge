@@ -78,7 +78,7 @@ For each cell in the matrix, an algorithm analogus to boundary fill algorithm fr
       neighbour_count(bottom)  
       // this step will count the nearby cells having chocolate chip.  
   6. return choco_chip_count  
-
+```
 
 ## Code
 ```python
@@ -117,4 +117,3 @@ if __name__ == '__main__':
                        000000"""
     cookie = [[int(chip) for chip in row.strip()] for row in cookie_string.split('\n')]
     print(list(main(cookie, choco_chip)))
-```
