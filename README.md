@@ -11,8 +11,8 @@ Given a cookie in matrix structure, where elements of the matrix are either 1 or
 |   `0`   |    other part   |
 
 You have to find all the number of chocolate chips in each groups which are there in the chocolate cookie.  
-Chocolate cookies are grouped together when they share one edge common between them. 
-that is for a piece of cookie chip, possible grouping elements are:
+Chocolate cookies are grouped together when they share one edge common between them.  
+That is for a piece of cookie chip, possible grouping elements are:
    - [x] top
    - [x] left
    - [x] right
@@ -54,3 +54,24 @@ that is for a piece of cookie chip, possible grouping elements are:
 
 Answer of above example would be:
 <pre>[1, 1, 1, 2, 3, 4]</pre>
+
+
+## Solution Approach:
+The solution includes iterative approach which iterates over the cookie matrix from up to down and left to right for each row in matrix.
+For each cell in the matrix, an algorithm analogus to boundary fill algorithm from computer graphics is used to find the neighbouring chocolate chips of the current cell which is taken in consideration. 
+Working of neighbouring algorithm:
+
+Algorithm neighbour_count(coords)
+    1. it takes in coordinates of current cell.
+    2. if current cell is not a chocolate chip:
+        goto step 6
+    3. Recolor current cell to not chocolate chip value.
+    4. Increase the choco\_chip\_count by 1,
+        Indicating that, one more chip is found in the adjacent of previous one.
+    5. neighbour_count(top)
+       neighbour_count(right)
+       neighbour_count(left)
+       neighbour_count(bottom)
+       // this step will count the nearby cells having chocolate chip.
+    6. return choco_\chip\_count
+    
