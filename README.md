@@ -115,7 +115,6 @@ For each cell in the matrix, an algorithm analogus to boundary fill algorithm fr
 31.                        011011
 32.                        100100
 33.                        000000"""
-34.     cookie = [[int(chip) for chip in row.strip()] for row in cookie_string.split('
-35. ')]
-36.     print(list(main(cookie, choco_chip)))
+34.     cookie = [[int(chip) for chip in row.strip()] for row in cookie_string.split('\n')]
+35.     print(list(main(cookie, choco_chip)))
 ```
