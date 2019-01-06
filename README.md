@@ -133,6 +133,7 @@ It  can be set to zero or one depending upon interviewer.
 lines 29-31 sets a random cookie string example.  
 <br/>
 <hr>
+
 ```python 
 35. cookie = [[int(chip) for chip in row.strip()] for row in cookie_string.split('\n')]
 ```  
@@ -143,6 +144,7 @@ line 36 calls main function with cookie matrix and choco_chip type.
 <br/>
 Inside main function:  
 <hr>
+
 ```python 
 20.     m, n = len(cookie), len(cookie[0])
 ```  
@@ -154,12 +156,14 @@ lines 21, 22 iterates over cookie matrix to get all the cell values in iterative
 line 23 checks if currently cell being assessed is a choco_chip.  
 <br/>
 <hr>
+
 ```python 
 24.                 neighbour_count.count = 0
 ```  
 This sets the initial counter to zero before algorithm is executed.  
 <br/>
 <hr>
+
 ```python 
 25.                 yield neighbour_count(cookie, i, j, choco_chip, m, n)
 ```  
@@ -167,24 +171,28 @@ Calling function with coordinates of current choco chip cell.
 <br/>
 Inside neighbour_count function:  
 <hr>
+
 ```python 
 2.     if (x<m and y<n) and (x>=0 and y>=0):
 ```  
 Making sure that x and y are not out of bounds and it doesn't access an illegal location.  
 <br/>
 <hr>
+
 ```python 
 3.         if cookie[x][y] == choco_chip:
 ```  
 Checking if the cell with given coordinates is a choco chip.  
 <br/>
 <hr>
+
 ```python 
 6.             neighbour_count.count += 1
 ```  
 Incrementing the counter when current cell is a choco chip.  
 <br/>
 <hr>
+
 ```python 
 8.             cookie[x][y] = 1-choco_chip
 ```  
