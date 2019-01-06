@@ -99,22 +99,71 @@ For each cell in the matrix, an algorithm analogus to boundary fill algorithm fr
 15.                   
 16.     return neighbour_count.count
 17. 
-18. def main(cookie, choco_chip):
-19.     m, n = len(cookie), len(cookie[0])
-20.     for i, row in enumerate(cookie):
-21.         for j, col in enumerate(row):
-22.             if col == choco_chip:      # checking if curent_cell is a choco_chip
-23.                 neighbour_count.count = 0
-24.                 yield neighbour_count(cookie, i, j, choco_chip, m, n)
-25. 
+18.     
+19. def main(cookie, choco_chip):
+20.     m, n = len(cookie), len(cookie[0])
+21.     for i, row in enumerate(cookie):
+22.         for j, col in enumerate(row):
+23.             if col == choco_chip:      # checking if curent_cell is a choco_chip
+24.                 neighbour_count.count = 0
+25.                 yield neighbour_count(cookie, i, j, choco_chip, m, n)
 26. 
-27. if __name__ == '__main__':
-28.     choco_chip = 1
-29.     cookie_string = """010000
-30.                        101101
-31.                        011011
-32.                        100100
-33.                        000000"""
-34.     cookie = [[int(chip) for chip in row.strip()] for row in cookie_string.split('\n')]
-35.     print(list(main(cookie, choco_chip)))
+27.  
+28. if __name__ == '__main__':
+29.     choco_chip = 1
+30.     cookie_string = """010000
+31.                        101101
+32.                        011011
+33.                        100100
+34.                        000000"""
+35.     cookie = [[int(chip) for chip in row.strip()] for row in cookie_string.split('\n')]
+36.     print(list(main(cookie, choco_chip)))
 ```
+
+
+## Code explanation:  
+code enters from line number 28  
+29.     choco_chip = 1     
+This defines the number which should be considered as choco chip.  
+It  can be set to zero or one depending upon interviewer.  
+<br/>
+lines 29-31 sets a random cookie string example.
+<br/>
+35. cookie = [[int(chip) for chip in row.strip()] for row in cookie_string.split('\n')]  
+This is list comprehension that iterates over each row in cookie_string that is found by splitting the string by newline.  
+For each row, each element is parsed as int and stored in cookie list.  
+<br/>
+line 36 calls main function with cookie matrix and choco_chip type.  
+<br/>
+Inside main function:
+20.     m, n = len(cookie), len(cookie[0])  
+This sets m and n to dimensions of the cookie matrix.  
+m: number of rows.  
+n: number of columns.  
+<br/>
+lines 21, 22 iterates over cookie matrix to get all the cell values in iterative manner.  
+line 23 checks if currently cell being assessed is a choco_chip.  
+<br/>
+24.                 neighbour_count.count = 0
+This sets the initial counter to zero before algorithm is executed.  
+<br/>
+25.                 yield neighbour_count(cookie, i, j, choco_chip, m, n)  
+Calling function with coordinates of current choco chip cell.  
+<br/>
+Inside neighbour_count function:  
+2.     if (x<m and y<n) and (x>=0 and y>=0):  
+Making sure that x and y are not out of bounds and it doesn't access an illegal location.  
+<br/>
+3.         if cookie[x][y] == choco_chip:  
+Checking if the cell with given coordinates is a choco chip.  
+<br/>
+6.             neighbour_count.count += 1  
+Incrementing the counter when current cell is a choco chip.
+<br/>
+8.             cookie[x][y] = 1-choco_chip  
+This line replaces current value of choco chip value  
+with it's alternate part's value which represents non choco chip part  
+in order to make sure that it is not used again.
+<br/>
+lines 11, 12, 13, 14 runs the algorithm for cell to right, left, top, down wrt to current cell being assessed.
+
