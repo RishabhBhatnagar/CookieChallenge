@@ -124,6 +124,7 @@ For each cell in the matrix, an algorithm analogus to boundary fill algorithm fr
 ## Code explanation:  
 code enters from line number 28  
 <hr>
+
 ```python 
 29.     choco_chip = 1
 ```  
