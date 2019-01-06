@@ -123,13 +123,13 @@ For each cell in the matrix, an algorithm analogus to boundary fill algorithm fr
 
 ## Code explanation:  
 code enters from line number 28  
-```python 29.     choco_chip = 1     
+```python 29.     choco_chip = 1```  
 This defines the number which should be considered as choco chip.  
 It  can be set to zero or one depending upon interviewer.  
 <br/>
 lines 29-31 sets a random cookie string example.
 <br/>
-```python 35. cookie = [[int(chip) for chip in row.strip()] for row in cookie_string.split('\n')]  
+```python 35. cookie = [[int(chip) for chip in row.strip()] for row in cookie_string.split('\n')]```  
 This is list comprehension that iterates over each row in cookie_string that is found by splitting the string by newline.  
 For each row, each element is parsed as int and stored in cookie list.  
 <br/>
