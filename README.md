@@ -57,11 +57,12 @@ Answer of above example would be:
 
 
 ## Solution Approach:
-The solution includes iterative approach which iterates over the cookie matrix from up to down and left to right for each row in matrix.
-For each cell in the matrix, an algorithm analogus to boundary fill algorithm from computer graphics is used to find the neighbouring chocolate chips of the current cell which is taken in consideration. 
-Working of neighbouring algorithm:
+The solution includes iterative approach which iterates over the cookie matrix from up to down and left to right for each row in matrix.  
+For each cell in the matrix, an algorithm analogus to boundary fill algorithm from computer graphics is used to find the neighbouring chocolate chips of the current cell which is taken in consideration.  
 
-Algorithm neighbour_count(coords)
+
+### Working of neighbouring algorithm:  
+<emp>Algorithm</emp> neighbour_count(coords)
     1. it takes in coordinates of current cell.
     2. if current cell is not a chocolate chip:
         goto step 6
