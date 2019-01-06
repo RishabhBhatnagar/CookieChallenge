@@ -27,6 +27,7 @@ def main(cookie, choco_chip):
 if __name__ == '__main__':
     choco_chip = 1
     cookie_string = """010000
+                       010000
                        101101
                        011011
                        100100

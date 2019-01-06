@@ -53,7 +53,7 @@ That is for a piece of cookie chip, possible grouping elements are:
 ![table](https://user-images.githubusercontent.com/20074475/50734125-cdc24f00-11bf-11e9-8c7c-dc31fa452fa2.png)
 
 Answer of above example would be:
-<pre>[1, 1, 1, 2, 3, 4]</pre>
+<pre>[2, 1, 4, 3, 1, 1]</pre>
 
 
 ## Solution Approach:
@@ -112,12 +112,13 @@ For each cell in the matrix, an algorithm analogus to boundary fill algorithm fr
 28. if __name__ == '__main__':
 29.     choco_chip = 1
 30.     cookie_string = """010000
-31.                        101101
-32.                        011011
-33.                        100100
-34.                        000000"""
-35.     cookie = [[int(chip) for chip in row.strip()] for row in cookie_string.split('\n')]
-36.     print(list(main(cookie, choco_chip)))
+31.                        010000
+32.                        101101
+33.                        011011
+34.                        100100
+35.                        000000"""
+36.     cookie = [[int(chip) for chip in row.strip()] for row in cookie_string.split('\n')]
+37.     print(list(main(cookie, choco_chip)))
 ```
 
 
@@ -131,17 +132,17 @@ code enters from line number 28
 This defines the number which should be considered as choco chip.  
 It  can be set to zero or one depending upon interviewer.  
 <br/>
-lines 29-31 sets a random cookie string example.  
+lines 30-35 sets a random cookie string example.  
 <br/>
 <hr>
 
 ```python 
-35. cookie = [[int(chip) for chip in row.strip()] for row in cookie_string.split('\n')]
+36. cookie = [[int(chip) for chip in row.strip()] for row in cookie_string.split('\n')]
 ```  
 This is list comprehension that iterates over each row in cookie_string that is found by splitting the string by newline.  
 For each row, each element is parsed as int and stored in cookie list.  
 <br/>
-line 36 calls main function with cookie matrix and choco_chip type.  
+line 37 calls main function with cookie matrix and choco_chip type.  
 <br/>
 Inside main function:  
 <hr>
