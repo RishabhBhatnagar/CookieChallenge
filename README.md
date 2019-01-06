@@ -62,17 +62,17 @@ For each cell in the matrix, an algorithm analogus to boundary fill algorithm fr
 
 
 ### Working of neighbouring algorithm:  
-<emp>Algorithm</emp> neighbour_count(coords)
-    1. it takes in coordinates of current cell.
-    2. if current cell is not a chocolate chip:
-        goto step 6
-    3. Recolor current cell to not chocolate chip value.
-    4. Increase the choco\_chip\_count by 1,
-        Indicating that, one more chip is found in the adjacent of previous one.
-    5. neighbour_count(top)
-       neighbour_count(right)
-       neighbour_count(left)
-       neighbour_count(bottom)
-       // this step will count the nearby cells having chocolate chip.
-    6. return choco_\chip\_count
-    
+<emp>Algorithm</emp> neighbour_count(coords):  
+   1. it takes in coordinates of current cell.  
+   2. if current cell is not a chocolate chip:  
+         goto step 6
+   3. Recolor current cell to not chocolate chip value.  
+   4. Increase the choco\_chip\_count by 1,  
+      Indicating that, one more chip is found in the adjacent of previous one.  
+   5. neighbour_count(top)  
+      neighbour_count(right)  
+      neighbour_count(left)  
+      neighbour_count(bottom)  
+      // this step will count the nearby cells having chocolate chip.  
+  6. return choco_\chip\_count  
+   
