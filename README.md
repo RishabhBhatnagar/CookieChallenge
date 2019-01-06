@@ -82,38 +82,40 @@ For each cell in the matrix, an algorithm analogus to boundary fill algorithm fr
 
 ## Code
 ```python
-def neighbour_count(cookie, x, y, choco_chip, m, n):
-    if (x<m and y<n) and (x>=0 and y>=0):
-        if cookie[x][y] == choco_chip:
-            # current chip is chocolate chip.
-            # counting current chip.
-            neighbour_count.count += 1
-            # replacing current cell value to non choco chip value
-            cookie[x][y] = 1-choco_chip
-            
-            # running this algo for neighbouring cells.
-            neighbour_count(cookie, x+1, y,   choco_chip, m, n) # right
-            neighbour_count(cookie, x-1, y,   choco_chip, m, n) # left
-            neighbour_count(cookie, x,   y+1, choco_chip, m, n) # top
-            neighbour_count(cookie, x,   y-1, choco_chip, m, n) # down
-                  
-    return neighbour_count.count
-
-def main(cookie, choco_chip):
-    m, n = len(cookie), len(cookie[0])
-    for i, row in enumerate(cookie):
-        for j, col in enumerate(row):
-            if col == choco_chip:      # checking if curent_cell is a choco_chip
-                neighbour_count.count = 0
-                yield neighbour_count(cookie, i, j, choco_chip, m, n)
-
-
-if __name__ == '__main__':
-    choco_chip = 1
-    cookie_string = """010000
-                       101101
-                       011011
-                       100100
-                       000000"""
-    cookie = [[int(chip) for chip in row.strip()] for row in cookie_string.split('\n')]
-    print(list(main(cookie, choco_chip)))
+1. def neighbour_count(cookie, x, y, choco_chip, m, n):
+2.     if (x<m and y<n) and (x>=0 and y>=0):
+3.         if cookie[x][y] == choco_chip:
+4.             # current chip is chocolate chip.
+5.             # counting current chip.
+6.             neighbour_count.count += 1
+7.             # replacing current cell value to non choco chip value
+8.             cookie[x][y] = 1-choco_chip
+9.             
+10.             # running this algo for neighbouring cells.
+11.             neighbour_count(cookie, x+1, y,   choco_chip, m, n) # right
+12.             neighbour_count(cookie, x-1, y,   choco_chip, m, n) # left
+13.             neighbour_count(cookie, x,   y+1, choco_chip, m, n) # top
+14.             neighbour_count(cookie, x,   y-1, choco_chip, m, n) # down
+15.                   
+16.     return neighbour_count.count
+17. 
+18. def main(cookie, choco_chip):
+19.     m, n = len(cookie), len(cookie[0])
+20.     for i, row in enumerate(cookie):
+21.         for j, col in enumerate(row):
+22.             if col == choco_chip:      # checking if curent_cell is a choco_chip
+23.                 neighbour_count.count = 0
+24.                 yield neighbour_count(cookie, i, j, choco_chip, m, n)
+25. 
+26. 
+27. if __name__ == '__main__':
+28.     choco_chip = 1
+29.     cookie_string = """010000
+30.                        101101
+31.                        011011
+32.                        100100
+33.                        000000"""
+34.     cookie = [[int(chip) for chip in row.strip()] for row in cookie_string.split('
+35. ')]
+36.     print(list(main(cookie, choco_chip)))
+```
