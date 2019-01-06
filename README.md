@@ -1,4 +1,4 @@
-# Classic Cookie Challenge
+# Classic Cookie Lines Challenge #1
 ### [Problem description here.](https://youtu.be/a4Py6rrf2Dk)
 
 
