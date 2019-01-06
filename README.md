@@ -123,20 +123,26 @@ For each cell in the matrix, an algorithm analogus to boundary fill algorithm fr
 
 ## Code explanation:  
 code enters from line number 28  
-```python 29.     choco_chip = 1```  
+```python 
+29.     choco_chip = 1
+```  
 This defines the number which should be considered as choco chip.  
 It  can be set to zero or one depending upon interviewer.  
 <br/>
-lines 29-31 sets a random cookie string example.
+lines 29-31 sets a random cookie string example.  
 <br/>
-```python 35. cookie = [[int(chip) for chip in row.strip()] for row in cookie_string.split('\n')]```  
+```python 
+35. cookie = [[int(chip) for chip in row.strip()] for row in cookie_string.split('\n')]
+```  
 This is list comprehension that iterates over each row in cookie_string that is found by splitting the string by newline.  
 For each row, each element is parsed as int and stored in cookie list.  
 <br/>
 line 36 calls main function with cookie matrix and choco_chip type.  
 <br/>
-Inside main function:
-```python 20.     m, n = len(cookie), len(cookie[0])```  
+Inside main function:  
+```python 
+20.     m, n = len(cookie), len(cookie[0])
+```  
 This sets m and n to dimensions of the cookie matrix.  
 m: number of rows.  
 n: number of columns.  
@@ -144,26 +150,38 @@ n: number of columns.
 lines 21, 22 iterates over cookie matrix to get all the cell values in iterative manner.  
 line 23 checks if currently cell being assessed is a choco_chip.  
 <br/>
-```python 24.                 neighbour_count.count = 0```  
+```python 
+24.                 neighbour_count.count = 0
+```  
 This sets the initial counter to zero before algorithm is executed.  
 <br/>
-```python 25.                 yield neighbour_count(cookie, i, j, choco_chip, m, n)```  
+```python 
+25.                 yield neighbour_count(cookie, i, j, choco_chip, m, n)
+```  
 Calling function with coordinates of current choco chip cell.  
 <br/>
 Inside neighbour_count function:  
-```python 2.     if (x<m and y<n) and (x>=0 and y>=0):```  
+```python 
+2.     if (x<m and y<n) and (x>=0 and y>=0):
+```  
 Making sure that x and y are not out of bounds and it doesn't access an illegal location.  
 <br/>
-```python 3.         if cookie[x][y] == choco_chip:```  
+```python 
+3.         if cookie[x][y] == choco_chip:
+```  
 Checking if the cell with given coordinates is a choco chip.  
 <br/>
-```python 6.             neighbour_count.count += 1```  
+```python 
+6.             neighbour_count.count += 1
+```  
 Incrementing the counter when current cell is a choco chip.  
 <br/>
-```python 8.             cookie[x][y] = 1-choco_chip```  
+```python 
+8.             cookie[x][y] = 1-choco_chip
+```  
 This line replaces current value of choco chip value  
 with it's alternate part's value which represents non choco chip part  
-in order to make sure that it is not used again.
+in order to make sure that it is not used again.  
 <br/>
-lines 11, 12, 13, 14 runs the algorithm for cell to right, left, top, down wrt to current cell being assessed.
+lines 11, 12, 13, 14 runs the algorithm for cell to right, left, top, down wrt to current cell being assessed.  
 
